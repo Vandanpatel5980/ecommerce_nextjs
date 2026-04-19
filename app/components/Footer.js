@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 import {
   FaGithub,
@@ -14,14 +15,16 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
           {/* Brand Section */}
           <div>
-            <div className="flex items-center gap-2 mb-4">
-              <div className="w-10 h-10 rounded-2xl bg-black text-white flex items-center justify-center font-bold text-lg shadow-md">
-                S
+            <Link href={'/'}>
+              <div className="flex items-center gap-2 mb-4">
+                <div className="w-10 h-10 rounded-2xl bg-black text-white flex items-center justify-center font-bold text-lg shadow-md">
+                  S
+                </div>
+                <h2 className="text-2xl font-bold text-gray-900">
+                  Shop<span className="text-blue-600">Sphere</span>
+                </h2>
               </div>
-              <h2 className="text-2xl font-bold text-gray-900">
-                Shop<span className="text-blue-600">Sphere</span>
-              </h2>
-            </div>
+            </Link>
             <p className="text-gray-600 leading-relaxed text-sm">
               Discover premium products with modern shopping experience.
               Fast delivery, secure payments, and trusted quality for every

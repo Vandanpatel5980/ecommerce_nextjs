@@ -1,14 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import {
-  Search,
-  Heart,
-  ShoppingCart,
-  User,
-  Menu,
-  X,
-} from "lucide-react";
+import { Search, Heart, ShoppingCart, User, Menu, X } from "lucide-react";
 import Link from "next/link";
 
 export default function Navbar() {
@@ -19,33 +12,46 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <div className="flex items-center gap-2 cursor-pointer">
-            <div className="w-10 h-10 rounded-2xl bg-black text-white flex items-center justify-center font-bold text-lg shadow-md">
-              S
+          <Link href={"/"}>
+            <div className="flex items-center gap-2 cursor-pointer">
+              <div className="w-10 h-10 rounded-2xl bg-black text-white flex items-center justify-center font-bold text-lg shadow-md">
+                S
+              </div>
+              <h1 className="text-2xl font-bold text-gray-900 tracking-tight">
+                Shop<span className="text-blue-600">Sphere</span>
+              </h1>
             </div>
-            <h1 className="text-2xl font-bold text-gray-900 tracking-tight">
-              Shop<span className="text-blue-600">Sphere</span>
-            </h1>
-          </div>
+          </Link>
 
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center gap-8">
-            <Link href={'/'} className="text-gray-700 font-medium hover:text-blue-600 transition" >
+            <Link
+              href={"/"}
+              className="text-gray-700 font-medium hover:text-blue-600 transition"
+            >
               Home
             </Link>
-            <Link href={'/shop'} className="text-gray-700 font-medium hover:text-blue-600 transition" >
+            <Link
+              href={"/shop"}
+              className="text-gray-700 font-medium hover:text-blue-600 transition"
+            >
               Shop
             </Link>
-            <Link href={'/shop'} className="text-gray-700 font-medium hover:text-blue-600 transition" >
+            <Link
+              href={"/shop"}
+              className="text-gray-700 font-medium hover:text-blue-600 transition"
+            >
               Categories
             </Link>
             {/* <a href="#" className="text-gray-700 font-medium hover:text-blue-600 transition">
               New Arrivals
             </a> */}
-            <Link href={'/contact'} className="text-gray-700 font-medium hover:text-blue-600 transition" >
+            <Link
+              href={"/contact"}
+              className="text-gray-700 font-medium hover:text-blue-600 transition"
+            >
               Contact
             </Link>
-            
           </nav>
 
           {/* Search Bar */}
@@ -71,10 +77,12 @@ export default function Navbar() {
               </span>
             </button>
 
-            <button className="hidden sm:flex items-center gap-2 cursor-pointer bg-blue-600 hover:bg-blue-700 text-white px-5 py-2.5 rounded-2xl font-medium transition shadow-md">
-              <User size={18} />
-              Login
-            </button>
+            <Link href="/login">
+              <button className="hidden sm:flex items-center gap-2 cursor-pointer bg-blue-600 hover:bg-blue-700 text-white px-5 py-2.5 rounded-2xl font-medium transition shadow-md">
+                <User size={18} />
+                Login
+              </button>
+            </Link>
 
             {/* Mobile Menu Button */}
             <button
@@ -95,19 +103,34 @@ export default function Navbar() {
       {menuOpen && (
         <div className="lg:hidden bg-white border-t border-gray-200 shadow-md">
           <div className="px-4 py-4 flex flex-col gap-4">
-            <a href="#" className="text-gray-700 font-medium hover:text-blue-600">
+            <a
+              href="#"
+              className="text-gray-700 font-medium hover:text-blue-600"
+            >
               Home
             </a>
-            <a href="#" className="text-gray-700 font-medium hover:text-blue-600">
+            <a
+              href="#"
+              className="text-gray-700 font-medium hover:text-blue-600"
+            >
               Shop
             </a>
-            <a href="#" className="text-gray-700 font-medium hover:text-blue-600">
+            <a
+              href="#"
+              className="text-gray-700 font-medium hover:text-blue-600"
+            >
               Categories
             </a>
-            <a href="#" className="text-gray-700 font-medium hover:text-blue-600">
+            <a
+              href="#"
+              className="text-gray-700 font-medium hover:text-blue-600"
+            >
               New Arrivals
             </a>
-            <a href="#" className="text-gray-700 font-medium hover:text-blue-600">
+            <a
+              href="#"
+              className="text-gray-700 font-medium hover:text-blue-600"
+            >
               Contact
             </a>
           </div>
